@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecExpo Quiz - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo Section -->
+        <div class="logo-container">
+            <img src="Expo Png.png" id="quiz-logo">
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-section">
+            <h2>TecExpo Quiz</h2>
+            <form class="login-form" id="login-form">
+                <div class="input-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="input-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" required min="1" max="100">
+                </div>
+                <button type="submit" class="submit-btn">Start Quiz</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

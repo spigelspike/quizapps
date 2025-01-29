@@ -1,0 +1,263 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3441;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    background: rgba(44, 52, 65, 0.8);
+    background-image: url("bg.jpg");
+}
+
+/* Add blur effect to background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 52, 65, 0.8); /* Same as #2c3441 but with opacity */
+    z-index: -1;
+}
+
+.container {
+    background-color: #1f2633;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    max-height: 100vh;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    background-color: rgba(44, 52, 65, 0.8);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(44, 52, 65, 0.9);
+}
+
+.submit-btn {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.submit-btn:disabled {
+    background-color: #4a5568;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.progress-bar {
+    background-color: #3b3f50;
+    border-radius: 50px;
+    position: relative;
+    height: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-bar-inner {
+    background: linear-gradient(90deg, #f05d61, #e463d5);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    transition: width 0.5s linear;
+    margin-bottom: 15px;
+}
+
+.question-container {
+    margin: 20px 0;
+}
+
+.question-container h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 10px 0;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.options li {
+    margin: 8px 0; 
+}
+
+.options label {
+    display: block;
+    background: rgba(44, 52, 65, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.options label:hover {
+    background: rgba(44, 52, 65, 0.9);
+    transform: translateX(5px);
+}
+
+.options input {
+    display: none;
+}
+
+.options input:checked + label {
+    background-color: #f05d61;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+}
+
+.timer {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #f05d61;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(240, 93, 97, 0.3);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Welcome heading style */
+h2 {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out;
+}/* Logo Styling */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#quiz-logo {
+    max-width: 150px; /* Adjust the size as needed */
+    height: auto;
+}
+
+/* Add these styles to your existing CSS file */
+#question-image {
+    max-width: 100%;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: block;
+}
+
+#question-image.hidden {
+    display: none;
+}
+
+/* Optional: Add a nice hover effect for images */
+#question-image:not(.hidden):hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Add these new styles to your existing CSS */
+
+.image-container {
+    width: 100%;
+    max-width: 250px; /* Reduced from 300px */
+    height: 180px; /* Fixed height to prevent layout shifts */
+    margin: 10px auto; /* Reduced margin */
+    text-align: center;
+    overflow: hidden; /* Prevent image overflow */
+}
+
+#question-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+.end-quiz {
+    text-align: center;
+    padding: 20px;
+}
+
+.end-quiz h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.end-quiz p {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+/* Keep all your existing styles and add these new ones at the end */

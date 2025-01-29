@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecExpo Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="quiz-section">
+            <div class="timer" id="timer">15</div>
+            <div class="progress-bar">
+                <div class="progress-bar-inner" id="progress-bar"></div>
+            </div>
+            <div class="question-container">
+                <h2 id="question">Question will appear here</h2>
+                <div class="image-container">
+                    <img id="question-image" class="hidden" src="" alt="Question Image">
+                </div>
+                <ul class="options" id="options"></ul>
+            </div>
+            <button class="submit-btn" id="submit-btn" disabled>Submit</button>
+        </div>
+    </div>
+    <script src="questions.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
